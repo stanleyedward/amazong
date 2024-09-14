@@ -1,3 +1,16 @@
+
+""" usage:
+from dataset import GroupImageDataset
+import torch
+from matplotlib import pyplot as plt
+from random import randint
+from torchvision import transforms
+import torchvision.transforms.functional as F
+from helper_functions import get_transform
+
+DATASET_DIR = '../dataset/'
+sample_test_dataset = GroupImageDataset(DATASET_DIR + 'sample_test.csv', DATASET_DIR + 'sample_test_images/', transform=get_transform(target_size=576), is_test=True)
+"""
 import os
 import pandas as pd
 from PIL import Image
