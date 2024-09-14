@@ -24,10 +24,10 @@ def download_test():
 
 def download_test_sample():
     sample_test = pd.read_csv(os.path.join(DATASET_FOLDER, 'sample_test.csv'))
-    download_images(sample_test['image_link'], DATASET_FOLDER + 'sample_test_images')
+    download_images(sample_test['image_link'], DATASET_FOLDER + 'sample_test_images', allow_multiprocessing=True)
     print(f"downloaded {len(os.listdir(DATASET_FOLDER + 'sample_test_images'))} images")
 
 def download_train_sample():
     sample_train = pd.read_csv(os.path.join(DATASET_FOLDER, 'train.csv'))
-    download_images(sample_train['image_link'][:176], DATASET_FOLDER  + 'sample_train_images')
+    download_images(sample_train['image_link'][:176], DATASET_FOLDER  + 'sample_train_images', allow_multiprocessing=True)
     print(f"downloaded {len(os.listdir(DATASET_FOLDER + 'sample_train_images'))} images")
